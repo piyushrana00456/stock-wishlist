@@ -6,6 +6,7 @@ import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import { useState } from "react";
 import styled from "styled-components";
+
 export const SearchBar = ({ placeholder, data, addData }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [query, setQuery] = useState("");
@@ -53,7 +54,7 @@ export const SearchBar = ({ placeholder, data, addData }) => {
         <div className="dataResult">
           {filteredData.map((value, key) => {
             return (
-              <div key={value[1]} className="dataItem">
+              <div key={value[0]} className="dataItem">
                 <div
                   style={{
                     color: value[1] > value[2] ? "#2DC6C2" : "#FF4D4F",
@@ -145,8 +146,9 @@ const Search = styled.div`
     margin-top: 5px;
     width: 100%;
     height: 400px;
-    background-color: white;
+    background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 100002;
     overflow: hidden;
     overflow-y: auto;
     & .dataItem {
