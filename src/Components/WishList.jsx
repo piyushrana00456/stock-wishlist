@@ -11,77 +11,89 @@ export const WishList = ({ user, deleteData }) => {
 
   return (
     <Wrap>
-      <div className="user">
-        <div className="userN">
-          <span>Piyush</span>
+      <div className="conatin">
+        <div className="user">
+          <div className="userN">
+            <span>Piyush</span>
+          </div>
+          <div className="optn">
+            <span>
+              <EditIcon />
+            </span>
+            <span>
+              <DeleteOutlineIcon />
+            </span>
+          </div>
         </div>
-        <div className="optn">
-          <span>
-            <EditIcon />
-          </span>
-          <span>
-            <DeleteOutlineIcon />
-          </span>
-        </div>
-      </div>
 
-      <div className="dataResult">
-        {user.map((value, key) => {
-          return (
-            <div key={value[1]} className="dataItem">
-              <div
-                style={{
-                  color: value[1] > value[2] ? "#2DC6C2" : "#FF4D4F",
-                }}
-                className="stock"
-              >
-                {value[0]}
-              </div>
-              <div className="mkt">
-                <div
-                  className="up"
-                  style={{
-                    color: value[1] > value[2] ? "#2DC6C2" : "#FF4D4F",
-                  }}
-                >
-                  {value[1]}
-                </div>
-                <div className="dwn">
-                  <span
+        <div className="dataResult">
+          {user.map(({ data, id }, key) => {
+            return (
+              <div key={data[1]} className="dataItem">
+                <div className="right">
+                  <div
                     style={{
-                      color:
-                        (value[1] - value[2]) / value[2] < -0
-                          ? "#FF4D4F"
-                          : "#2DC6C2",
+                      color: data[1] > data[2] ? "#2DC6C2" : "#FF4D4F",
                     }}
-                    className="arrow"
+                    className="stock"
                   >
-                    {(value[1] - value[2]) / value[2] < 0 ? (
-                      <ArrowDropDownIcon />
-                    ) : (
-                      <ArrowDropUpIcon />
-                    )}
-                  </span>
-                  {((value[1] - value[2]) / value[2]).toPrecision(1)}%
+                    <div>{data[0].split("::")[0]}</div>
+                  </div>
+                  <div className="Nse">
+                    <div>{data[0].split("::")[1]}</div>
+                  </div>
+                </div>
+                <div className="mkt">
+                  <div
+                    className="up"
+                    style={{
+                      color: data[1] > data[2] ? "#2DC6C2" : "#FF4D4F",
+                    }}
+                  >
+                    {data[1]}
+                  </div>
+                  <div className="dwn">
+                    <span
+                      style={{
+                        color:
+                          (data[1] - data[2]) / data[2] < -0
+                            ? "#FF4D4F"
+                            : "#2DC6C2",
+                      }}
+                      className="arrow"
+                    >
+                      {(data[1] - data[2]) / data[2] < 0 ? (
+                        <ArrowDropDownIcon />
+                      ) : (
+                        <ArrowDropUpIcon />
+                      )}
+                    </span>
+                    {((data[1] - data[2]) / data[2]).toPrecision(1)}%
+                  </div>
+                </div>
+                <div
+                  onClick={() => handleDelete(id)}
+                  style={{ display: "none" }}
+                  className="add"
+                >
+                  <DeleteOutlineIcon />
                 </div>
               </div>
-              <div
-                onClick={() => handleDelete(value)}
-                style={{ display: "none" }}
-                className="add"
-              >
-                <DeleteOutlineIcon />
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </Wrap>
   );
 };
 const Wrap = styled.div`
-  width: 50%;
+  width: 95%;
   margin: auto;
+  position: relative;
+
+  & .conatin {
+    width: 100%;
+  }
   & .dataResult {
     margin-top: 5px;
     width: 100%;
@@ -90,22 +102,29 @@ const Wrap = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
     overflow-y: auto;
+
+    & .right {
+      width: 20%;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & .Nse > div {
+        border-radius: 3px;
+        padding: 1px 5px;
+        background-color: #fafafa;
+        color: gray;
+      }
+    }
+
     & .dataItem {
       display: flex;
       padding: 10px 25px;
-      /* justify-content: space-between; */
       margin-bottom: 10px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-      & .stock {
-        font-size: 20px;
-        font-weight: 500;
-        text-align: center;
-        display: flex;
-        width: 20%;
-        justify-content: center;
-        align-items: center;
-      }
 
       & .mkt {
         margin-left: 60%;

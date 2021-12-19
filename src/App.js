@@ -15,7 +15,7 @@ function App() {
     let val = [...value, (value[3] = uuid())];
 
     await axios
-      .post("http://localhost:4000/user", val)
+      .post("https://stockback.herokuapp.com/user", { data: val })
       .then((e) => {
         console.log(e);
         fecthData();
@@ -31,7 +31,7 @@ function App() {
 
   const fecthData = async () => {
     await axios
-      .get("http://localhost:4000/user")
+      .get("https://stockback.herokuapp.com/user")
       .then((e) => {
         console.log("users", e.data);
         setUserData(e.data);
@@ -41,7 +41,17 @@ function App() {
       });
   };
 
-  const deleteData = async (value) => {};
+  const deleteData = async (value) => {
+    await axios
+      .delete(`https://stockback.herokuapp.com/user${value}`)
+      .then((e) => {
+        console.log(e);
+        fecthData();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="App">

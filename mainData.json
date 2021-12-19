@@ -1,9 +1,78 @@
 {
   "user": [
-    ["ARVINDFASN::NSE", 281.45, 282.7, "35ac0dcd-a1d8-4d22-b697-225ee9009243"],
-    ["TATASTEEL::NSE", 1071.2, 1114.75, "b921cb0c-8788-4919-bd3d-1c5e28d4d18a"],
-    ["PURVA::NSE", 135.7, 132.4, "fcc343a1-39ef-48c1-bb6b-a1caed074b62"],
-    ["VGUARD::NSE", 244.75, 232.15, "f8a448f1-0743-4ffc-a65d-2cccee45ae67"],
-    ["DABUR::NSE", 594.95, 598, "3df6c7d6-5e26-492e-ae3d-14b9e1e46c22"]
+    {
+      "data": [
+        "TFCILTD::NSE",
+        56.5,
+        55.95,
+        "475aeba0-5688-4288-8df6-57b06a2d2811"
+      ],
+      "id": 7
+    },
+    {
+      "data": [
+        "CDSL::NSE",
+        1451.05,
+        1370.25,
+        "519f71ab-06e2-47a7-b9fa-ea5a288f8f68"
+      ],
+      "id": 9
+    },
+    {
+      "data": [
+        "ASIANPAINT::NSE",
+        3143.65,
+        3144.3,
+        "9dafd6bc-25f5-4fa2-8bcb-907a8d16e68d"
+      ],
+      "id": 10
+    },
+    {
+      "data": [
+        "ASTRAL::NSE",
+        2197.7,
+        2115.85,
+        "2f58e627-4b8f-48b6-a48f-2c891e17a0a2"
+      ],
+      "id": 11
+    },
+    {
+      "data": [
+        "TATASTEEL::NSE",
+        1071.2,
+        1114.75,
+        "98bd38e9-0e97-4bbc-bb17-539f1cb3e1d9"
+      ],
+      "id": 12
+    },
+    {
+      "data": [
+        "ARVINDFASN::NSE",
+        281.45,
+        282.7,
+        "8fb5bd5c-daab-4219-9211-3b1cd400ba32"
+      ],
+      "id": 13
+    },
+    {
+      "data": [
+        "GRASIM::NSE",
+        1662.45,
+        1683.95,
+        "064987c4-c22f-4027-a5b7-4cedbfdfe1c8",
+        "9947dd11-ad24-4daf-a4af-5e5a06cb7feb"
+      ],
+      "id": 14
+    },
+    {
+      "data": [
+        "GRASIM::NSE",
+        1662.45,
+        1683.95,
+        "9947dd11-ad24-4daf-a4af-5e5a06cb7feb",
+        "064fc9d9-02e1-4cd6-9c2e-047035fe5a00"
+      ],
+      "id": 15
+    }
   ]
 }
