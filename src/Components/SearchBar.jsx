@@ -17,7 +17,7 @@ export const SearchBar = ({ placeholder, data, addData }) => {
   const [effect, setEffect] = useState(0);
   const getData = async () => {
     await axios
-      .get("http://localhost:4000/user")
+      .get("https://stockback.herokuapp.com/user")
       .then((res) => {
         setWishListed(res.data);
       })
@@ -63,7 +63,7 @@ export const SearchBar = ({ placeholder, data, addData }) => {
 
   const deleteData = async (value) => {
     await axios
-      .delete(`http://localhost:4000/user/${value}`)
+      .delete(`https://stockback.herokuapp.com/user/${value}`)
       .then((e) => {
         console.log(e);
         setEffect(effect + 1);

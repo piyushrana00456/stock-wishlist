@@ -43,7 +43,7 @@ function App() {
 
   const deleteData = async (value) => {
     await axios
-      .delete(`https://stockback.herokuapp.com/user${value}`)
+      .delete(`https://stockback.herokuapp.com/user/${value}`)
       .then((e) => {
         console.log(e);
         fecthData();
