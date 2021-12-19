@@ -3,7 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+
 ## Json is on Heroku
+https://stockback.herokuapp.com/user
 In the project directory, you can run:
 
 ### `npm start`
